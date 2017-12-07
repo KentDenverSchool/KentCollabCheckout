@@ -1,0 +1,22 @@
+{% extends 'CollabCheckout/base.html'%}
+{% load static %}
+{% block body_block %}
+<h1>Welcome to the Collaboration Studio Checkout Hub</h1>
+   <p>This tool will checkout a single studio for every time the selected period meets until the end of the school year.<br> Please do not abuse it! If you have any questions, please contact <a href="mailto:iitsupport@kentdenver.org">iitsupport@kentdenver.org</a>.</p>
+    <br>
+   <div id="wrap">
+           <form id="myForm" method="post" action="/collabcheckout/manycheckouts/">
+
+            {% csrf_token %}
+           {% if extra_message %}
+               <p>{{ extra_message }}</p>
+           {% endif %}
+            {% for field in form.visible_fields %}
+                <p>{{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}</p>
+            {% endfor %}
+           <input type="submit" name="submit" value="Submit" />
+        </form>
+   </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% if options %}
+    <option></option>
+    {% for p in options %}
+        <option value="{{ p.number }}">{{ p.text }}</option>
+    {%  endfor %}
+{% endif %}

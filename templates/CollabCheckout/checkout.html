@@ -1,0 +1,35 @@
+{% extends 'CollabCheckout/base.html'%}
+{% load static %}
+{% block body_block %}
+<h1>Welcome to the Collaboration Studio Checkout Hub</h1>
+   <p>To check out a room, fill out the form below. If you have any questions, please contact <a href="mailto:iitsupport@kentdenver.org">iitsupport@kentdenver.org</a>.</p>
+    <br>
+   <div id="wrap">
+           <form id="myForm" method="post" action="/collabcheckout/">
+
+            {% csrf_token %}
+            {% if extra_error %}
+               <p style="color: red">{{ extra_error }}</p>
+            {% endif %}
+            {% if extra_message %}
+               <p>{{ extra_message}}</p>
+            {% endif %}
+            {% if form.errors %}
+                {% for errors in form.errors %}
+                    <p style="color: red">Invalid {{ errors }}<p>
+                {% endfor %}
+            {% endif %}
+            <p><input type="text" name="email" id='email' placeholder="Email address" required="true"></p>
+            <p id="DateName"><input type="text" value="" id="datepicker" name="date" placeholder="Date" required="true"/></p>
+            <p id= "PeriodsName">Period:&nbsp;&nbsp;<select name ="period" id="Periods" required="true">
+            <option selected="true" value="empty" selected>None Selected</option>
+            </select></p>
+
+            <p id= "RoomsName">Room:&nbsp;&nbsp;<select name ="room" id="Rooms" required="true">
+            <option selected="true" value="empty" selected>None Selected</option>
+            </select></p>
+            <br>
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+   </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% load static %}
+<html lang="en">
+<meta charset="utf-8">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title_block %}{% endblock %} </title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'jquery-ui-1.11.1/jquery-ui.css' %}" rel="stylesheet">
+    <link href="{% static 'jquery-ui-1.11.1/jquery-ui.structure.min.css' %}" rel="stylesheet">
+    <link href="{% static 'jquery-ui-1.11.1/jquery-ui.theme.min.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+   <div id="sidebar"></div>
+    <div id="topcontainer">
+        <div id="topbanner">
+            <a class="site-info" href="http://www.kentdenver.org/page.cfm?p=1">
+                <span class="site-name">Kent Denver School</span>
+                <span class="site-tagline">Excellence in Scholarship and Character</span>
+            </a>
+
+            <p></p>
+                <br>
+                <br>
+
+        </div>
+    </div>
+
+
+
+
+<!--Nav Bar-->
+
+    <div class="banners" id="red-banner">
+
+        <ul class="nav-main__list">
+            <li class="nav-main__item"><a href="https://kentdenver.instructure.com/courses/2221/"><div class="nav-main__anchor">The Duncan Center</div></a></li>
+            <li class="nav-main__item"><a href="https://spark.kentdenver.org/studios"><div class="nav-main__anchor">Collab Checkout</div></a></li>
+            <li class="nav-main__item"><a href="https://spark.kentdenver.org/collabstatus"><div class="nav-main__anchor">Collab Status</div></a></li>
+            <li class="nav-main__item"><a href="https://spark.kentdenver.org/ezproxy/"><div class="nav-main__anchor">Database List</div></a></li>
+        </ul>
+    </div>
+
+
+
+
+
+    <!-- not necessary -->
+    <div class="banners" id="picture-banner"></div>
+
+
+
+
+    <!-- Page content goes here -->
+    <div class="banners" id="white-banner">
+        <br>
+        <br>
+        {% block body_block %}{% endblock %}
+
+
+    </div>
+
+
+
+    <div id="bottomcontainer" class="text_misc">
+	   <div id="bottombanner">
+           <div itemtype="http://schema.org/EducationalOrganization" class="address">
+               <div itemprop="name">Kent Denver School</div>
+
+               <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                   <span itemprop="streetAddress">4000 East Quincy Avenue, </span>
+                   <span itemprop="addressLocality">Englewood, </span>
+                   <span itemprop="addressRegion">Colorado</span>
+                   <span itemprop="postalCode">80113</span>
+               </div>
+
+               <div itemprop="telephone">Tel: 303.770.7660</div>
+           </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script src="{% static 'jquery-ui-1.11.1/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/collab-scripts.js' %}"></script>
+</html>

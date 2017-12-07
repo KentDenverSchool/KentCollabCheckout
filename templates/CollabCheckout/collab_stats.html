@@ -1,0 +1,16 @@
+{% extends 'CollabCheckout/base.html'%}
+{% load static %}
+{% block title_block %}Collaboration Studio Usage Statistics{% endblock %}
+{% block body_block %}
+<table class="table table-striped table-bordered" style="position: absolute; right: 4%; width: 92%">
+
+{% for l in list %}
+    <tr>
+        <td width="25%" style="text-align: center;">{{ l.label }}</td>
+	    <td width="60%" style="text-align: center;">{{ l.data }}</td>
+		<td width="35%" style="text-align: center;">{{ l.next_user }}</td>
+    </tr>
+{% endfor %}
+</table>
+<br /> <br /> <br />
+{% endblock %}

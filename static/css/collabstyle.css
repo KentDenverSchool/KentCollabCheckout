@@ -1,0 +1,31 @@
+body {
+    font-size: 18px;
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica;
+    overflow: scroll;
+    text-align:center;
+}
+
+#myForm {
+    float: left;
+    position: relative;
+    left: -50%;
+    text-align:center;
+}
+
+#wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#PeriodsName{
+display:none;
+}
+
+#RoomsName{
+display:none;
+}
+
+#CheckoutButton{
+display:none;
+}
